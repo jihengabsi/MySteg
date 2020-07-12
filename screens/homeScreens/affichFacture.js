@@ -94,7 +94,7 @@ const Home = ({navigation})=>{
                   </View>  
                  <View style={{ paddingHorizontal: 20, paddingVertical: 16,flexDirection:"column",  }}>
 
-                    <Text style={{ fontSize: 18, color: 'gray' }}>{item.dateDebut.substring(0,10)}</Text>   
+                    <Text style={{ fontSize: 18, color: 'gray' }}>{item.dateDebut.substring(0,10)} </Text>   
                     <Text style={{ fontSize: 18, color: 'gray' }}>{item.dateFin.substring(0,10)}</Text>
                   <Text style={{ fontSize: 20, color: 'black'}}>{item.etat}</Text>     
                 </View>
