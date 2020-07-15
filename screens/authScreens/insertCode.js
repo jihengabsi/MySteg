@@ -71,7 +71,7 @@ const LoginScreen =(props) => {
 
 
     <TouchableOpacity  style={styles.login}  onPress={() => verifCode(props)} >
- <Text style={styles.textlog}>Send</Text>
+ <Text style={styles.textlog}>Valider</Text>
 </TouchableOpacity>
 
 </View>

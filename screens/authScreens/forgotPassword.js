@@ -26,7 +26,7 @@ const LoginScreen = (props) => {
       if(isVAlid){
         setEmailError("")
      }else{
-      setEmailError("Email non valide")
+      setEmailError("email incorrect")
      }
     }
 }
@@ -57,7 +57,7 @@ const passwordforgotten=async(props)=>{
       try {
        await AsyncStorage.setItem('code', JSON.stringify(code))
        await AsyncStorage.setItem('email1',email)
-       Alert.alert("email sent!")
+       Alert.alert("Un mail a été envoyé a votre email!")
        props.navigation.push("insertCode")
       }catch (e) {
        Alert.alert("Changer l'email!")
