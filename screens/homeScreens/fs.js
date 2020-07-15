@@ -8,6 +8,8 @@ import {StyleSheet,TouchableOpacity,Image,
 
    import AsyncStorage from '@react-native-community/async-storage';
 import steg from '../../images/stegLogo.png'
+import {strings} from './localization'
+
 
  export default payerFac = (props) => {
     const {consoElec,consoGaz,nbMois,montantElec,montantGaz,montant,date} = props.route.params.item
@@ -27,7 +29,7 @@ import steg from '../../images/stegLogo.png'
 </View>
 
 <View style={styles.infoContainer}>
-<Text style={{fontWeight:"200",fontSize:22,color:"#365f91"}}>Facture simulé </Text>
+<Text style={{fontWeight:"200",fontSize:22,color:"#365f91"}}>{strings.fsFactSim}</Text>
 </View>
 
 </View>
@@ -37,35 +39,35 @@ import steg from '../../images/stegLogo.png'
 <View style={styles.cub2}>
 <View style={{marginTop:0}}>
 <View style={styles.info}>
-<Text style={styles.texticon}>Nbre Mois</Text>
+<Text style={styles.texticon}>{strings.simfacNnmois}</Text>
 <Text style={styles.texticon1}>{nbMois}</Text>
 </View>
 
 
 <View style={styles.info}>
 
-<Text style={styles.texticon}>Consommation elec:</Text>
+<Text style={styles.texticon}>{strings.simdacConselect}</Text>
 <Text style={styles.texticon1}>{consoElec}</Text>
 </View>
 <View style={styles.info}>
-<Text style={styles.texticon}>Montant elec:</Text>
+<Text style={styles.texticon}>{strings.fsMonTtal}</Text>
 <Text style={styles.texticon1}>{montantElec}</Text>
 </View>
 
 <View style={styles.info}>
 
 
-<Text style={styles.texticon}>Consommation gaz:</Text>
+<Text style={styles.texticon}>{strings.simdacCongaz}</Text>
 <Text style={styles.texticon1}>{consoGaz}</Text>
 
 </View>
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Montant gaz:</Text>
+<Text style={styles.texticon}>{strings.simfacmontantgaz}</Text>
 <Text style={styles.texticon1}>{montantGaz}</Text>
 </View>
 <View style={styles.info}>
-<Text style={styles.texticon}>Montant totale:</Text>
+<Text style={styles.texticon}>{strings.simfactmontantTotal}</Text>
 <Text style={styles.texticon1}>{montant}</Text>
 
 </View>

@@ -9,6 +9,7 @@ import bgImage from '../../images/background.jpg';
 import IconBadge from 'react-native-icon-badge';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { Card } from "@paraboly/react-native-card";
+import {strings} from './localization'
 
   
 export default  accueil =   (props) => {
@@ -42,13 +43,13 @@ useEffect(()=>{
               if (reference=="null"){
               return (
                 <Card
-                title="Bienvenu"
+                title={strings.bienvenue}
                 iconName="plus"
                 IconBadge
                 defaultTitle=""
                 iconType="Entypo"
                 defaultContent=""
-                content="Pour continuer ajoutez une référence"
+                content={strings.add_ref}
                 onPress={() => props.navigation.push('ajoutRef1')}
                 iconBackgroundColor="lightblue"
                 containerHeight={100}
@@ -59,7 +60,7 @@ useEffect(()=>{
              else {return(
             <View>
                    <Card
-                title="Changer votre référence"
+                title={strings.chnage_ref}
                 iconName="edit"
                 IconBadge
                 defaultTitle=""
@@ -97,7 +98,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>Profil</Text>
+                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>{strings.votre_ref}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -120,7 +121,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{  fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>Facturation</Text>
+                  <Text style={{  fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>{strings.factur}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -143,7 +144,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{  fontSize: 15.5, color: '#ffffff', fontWeight: 'bold'}}>Historique</Text>
+                  <Text style={{  fontSize: 15.5, color: '#ffffff', fontWeight: 'bold'}}>{strings.hist}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -166,7 +167,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{  fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>Demande</Text>
+                  <Text style={{  fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>{strings.demande}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -193,7 +194,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold'}}>Réclamation</Text>
+                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold'}}>{strings.rec}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -214,7 +215,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold'}}>Paramétres</Text>
+                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold'}}>{strings.parametre}</Text>
                 </TouchableOpacity>
               </View>
             </View>

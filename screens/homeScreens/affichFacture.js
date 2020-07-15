@@ -5,6 +5,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import AsyncStorage from '@react-native-community/async-storage';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Searchbar } from 'react-native-paper';
+import {strings} from './localization'
 
 import Modal from 'react-native-modal';
 const Home = ({navigation})=>{
@@ -88,9 +89,9 @@ const Home = ({navigation})=>{
             <FontAwesome5 name="money-check" style={{paddingVertical:10}}  size={70} color="#0065bd" />
             </View>
                 <View style={{ flex:1,paddingHorizontal: 8, paddingVertical: 16,flexDirection:"column", }}>
-            <Text style={{ fontSize: 18, color: 'black' }}>Date Debut:</Text>   
-                    <Text style={{ fontSize: 18, color: 'black' }}>Date Fin:</Text>
-                  <Text style={{ fontSize: 20, color: '#1e5565'}}>Etat:</Text>   
+            <Text style={{ fontSize: 18, color: 'black' }}>{strings.affichfactDatDeb}</Text>   
+                    <Text style={{ fontSize: 18, color: 'black' }}>{strings.affichfactDatFin}</Text>
+                  <Text style={{ fontSize: 20, color: '#1e5565'}}>{strings.affichfactEtat}</Text>   
                   </View>  
                  <View style={{ paddingHorizontal: 20, paddingVertical: 16,flexDirection:"column",  }}>
 
@@ -113,7 +114,7 @@ const Home = ({navigation})=>{
           searchIcon={{ size: 24 }}
           onChangeText={text => SearchFunc(text)}
           onClear={Boiler}
-          placeholder="Tapez une date ici..."
+          placeholder={strings.affFact}
                      
        
       />
@@ -142,7 +143,7 @@ const Home = ({navigation})=>{
                     marginTop: 50
                   }}
                 >
-                  <Text style={{ color: 'red' }}>Aucune facture trouvé</Text>
+                  <Text style={{ color: 'red' }}>{strings.recERoFact}</Text>
                 </View>
               )}
               />
@@ -150,17 +151,17 @@ const Home = ({navigation})=>{
             }
              <Modal isVisible={isModalVisible}>
          <View style={styles.modalView}>
-         <Text style={{top:20,left:100,fontSize: 22, color: '#d31607', }} >Interdit!</Text>
-         <Text style={{top:40,left:10,fontSize: 18, color: 'black', }} >S'il vous plais ajouter une référence d'abord</Text>
+         <Text style={{top:20,left:100,fontSize: 22, color: '#d31607', }} >{strings.affichfactInterdit}</Text>
+         <Text style={{top:40,left:10,fontSize: 18, color: 'black', }} >{strings.affichfactAlert}</Text>
          
          <View style={{width:'100%',flexDirection:"row"}}>
            <TouchableOpacity style={{borderColor:'white',borderWidth:1,borderBottomLeftRadius:10,bottom:-97,width:150,backgroundColor:'lightgrey'}} onPress={() => {
              toggleModal()
              navigation.replace('ajoutRef1')}}>
-           <Text style={{left:50,fontSize: 25, color: '#fff', fontWeight:'normal'}} >OK</Text>
+           <Text style={{left:50,fontSize: 25, color: '#fff', fontWeight:'normal'}} >{strings.affichfactOk}</Text>
            </TouchableOpacity>
            <TouchableOpacity style={{borderColor:'white',borderWidth:1,borderBottomRightRadius:10,bottom:-97,width:150, backgroundColor:'lightgrey'}}  onPress={() => {navigation.replace('accueil')}}>
-           <Text style={{left:30,fontSize: 25, color: '#fff', fontWeight:'normal'}} >Annuler</Text>
+           <Text style={{left:30,fontSize: 25, color: '#fff', fontWeight:'normal'}} >{strings.affichfactAnnuler}</Text>
            </TouchableOpacity>
             </View>
                  
@@ -208,7 +209,7 @@ const styles = StyleSheet.create({
         flex:1,
         position:"absolute",
         bottom:300,
-        left:30,
+        left:45,
         width:300,
         height:206,
         borderRadius: 10,

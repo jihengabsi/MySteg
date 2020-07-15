@@ -7,6 +7,8 @@ import bgImage from '../../images/steg9.jpeg'
 import Logo from '../../images/stegLogo.png'
 import {Picker} from '@react-native-community/picker';
 import moment from 'moment';
+import {strings} from './localization'
+
 import AsyncStorage from '@react-native-community/async-storage';
 const sendMessage = ({navigation})=>{
 
@@ -55,7 +57,7 @@ navigation.replace("accueil")
           </View>
           <KeyboardAvoidingView >
           <View style={styles.partie2}>
-<Text style={{color:'#136FAF',fontWeight:'bold',fontSize:15,marginStart:20,marginBottom:10}}>Type de la réclamation:</Text>
+<Text style={{color:'#136FAF',fontWeight:'bold',fontSize:15,marginStart:20,marginBottom:10}}>{strings.typerec}</Text>
 </View>
 
 <View style={{backgroundColor:'rgba(255,255,255,0.25)', width:"90%",
@@ -69,14 +71,14 @@ navigation.replace("accueil")
               placeholder: {color: '#136FAF'},
               padding:10}}
         >
-          <Picker.Item  label= 'Réclamation et renseignants sur facture' value= 'Réclamation et renseignants sur facture' />
-          <Picker.Item  label= 'Relance pour étude ou exécution' value= 'Relance pour étude ou exécution' />
-          <Picker.Item  label= 'Réclamation pour réfection trottoir' value= 'Réclamation pour réfection trottoir' />
-          <Picker.Item  label= 'Réclamation pour constats dégéts matériels suite incident' value= 'Réclamation pour constats dégéts matériels suite incident' />
-          <Picker.Item  label= 'Vérification de tension ou pression' value= 'Vérification de tension ou pression' />
-          <Picker.Item  label= 'Vérification de disjoncter  ou détenteur ou compteur' value= 'Vérification de disjoncter  ou détenteur ou compteur' />
-          <Picker.Item  label= 'Correction dadress ou nom' value= 'Correction dadress ou nom' />
-          <Picker.Item  label= 'Autre' value= 'Autre' />
+          <Picker.Item  label={strings.typerec1}  value= 'Réclamation et renseignants sur facture' />
+          <Picker.Item  label={strings.typerec2} value= 'Relance pour étude ou exécution' />
+          <Picker.Item  label={strings.typerec3} value= 'Réclamation pour réfection trottoir' />
+          <Picker.Item  label={strings.typerec4} value= 'Réclamation pour constats dégéts matériels suite incident' />
+          <Picker.Item  label={strings.typerec5} value= 'Vérification de tension ou pression' />
+          <Picker.Item  label={strings.typerec6}  value= 'Vérification de disjoncter  ou détenteur ou compteur' />
+          <Picker.Item  label={strings.typerec7} value= 'Correction dadress ou nom' />
+          <Picker.Item  label={strings.typerec8} value= 'Autre' />
         </Picker>
 
         </View>
@@ -91,7 +93,7 @@ onChangeText={text=>setMessage(text)}
 containerStyle={styles.textareaContainer}
 style={styles.textarea}
 maxLength={300}
-placeholder={'Rédigez votre réclamation ici'}
+placeholder={strings.placeholderCons}
 placeholderTextColor={'#136FAF'}
 underlineColorAndroid={'transparent'}
 
@@ -104,7 +106,7 @@ underlineColorAndroid={'transparent'}
       <View style={{ alignItems: 'center', justifyContent: 'center' }}>
         <TouchableOpacity style={styles.login}
          onPress={()=>saveRec()}>
-          <Text style={styles.textlog}>Envoyer</Text>
+          <Text style={styles.textlog}>{strings.bt_env}</Text>
         </TouchableOpacity>
       </View>
 

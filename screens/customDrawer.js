@@ -7,7 +7,7 @@ import {StyleSheet,Image,
    import {   createDrawerNavigator,  DrawerContentScrollView,
     DrawerItemList,
     DrawerItem } from '@react-navigation/drawer';
-
+import { strings } from './homeScreens/localization'
    import accueil1 from "../screens/homeScreens/accueil"
    import profil from "../screens/homeScreens/profil";
    import help from "../screens/homeScreens/help";
@@ -58,14 +58,14 @@ import MyTabs from './customButtomTab';
  <Text style={styles.name}>{name}</Text>
        </View>
        <ScrollView>
-                    <Text style={{marginVertical: 10,marginHorizontal:15,color:'gray'}}>Facturation:</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:15,color:'gray'}}>{strings.custFact}</Text>
                     <View style={{ flexDirection: 'row',alignItems: "center"}}>
                     <FontAwesome5 style={{marginVertical: 10,marginHorizontal:15}} name={'money-bill'} size={20} color="lightblue" />
-                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('affichFac')} >Factures</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('affichFac')} >{strings.custFact1}</Text>
                     </View>
                     <View style={{ flexDirection: 'row',alignItems: "center"}}>
                     <FontAwesome5 style={{marginVertical: 10,marginHorizontal:20}} name={'calculator'} size={20} color="lightblue" />
-                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('simulerFac')} >Simulation</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('simulerFac')} >{strings.custSim}</Text>
                     </View>
                 </ScrollView>
                 <View style={{ borderBottomColor: 'lightgrey',borderBottomWidth: 1}}/>
@@ -74,7 +74,7 @@ import MyTabs from './customButtomTab';
  <View style={{ flexDirection: 'row',alignItems: "center"}}>
                     <FontAwesome5 style={{marginVertical: 120,marginHorizontal:20}} name={'sign-out-alt'} size={20} color="lightblue" />
                     
-                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('signout',{picture})} >Déconnexion</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('signout',{picture})} >{strings.custDeco}</Text>
                     </View>
     
    </DrawerContentScrollView>

@@ -8,6 +8,7 @@ import {StyleSheet,TouchableOpacity,Image,
 
    import AsyncStorage from '@react-native-community/async-storage';
 import steg from '../../images/stegLogo.png'
+import { strings } from './localization';
 
  export default payerFac = (props) => {
 
@@ -27,7 +28,7 @@ import steg from '../../images/stegLogo.png'
 
 
 <View style={styles.infoContainer}>
-<Text style={{fontWeight:"300",fontSize:30,color:"#365f91"}}>Réclamation</Text>
+<Text style={{fontWeight:"300",fontSize:30,color:"#365f91"}}>{strings.rec}</Text>
 </View>
 
 </View>
@@ -37,24 +38,24 @@ import steg from '../../images/stegLogo.png'
 <View style={styles.cub2}>
 <View style={{marginTop:0}}>
 <View style={styles.info}>
-<Text style={styles.texticon}>Date:</Text>
+<Text style={styles.texticon}>{strings.daterec}</Text>
 <Text style={styles.texticon1}>{date}</Text>
 </View>
 
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Type de réclamation:</Text>
+<Text style={styles.texticon}>{strings.recETitle}</Text>
 <Text style={styles.texticon1}>{typeRec}</Text>
 </View>
 
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Message de réclamation:</Text>
+<Text style={styles.texticon}>{strings.recMessageRec}</Text>
 <Text style={styles.texticon1}>{message}</Text>
 </View>
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Réponse:</Text>
+<Text style={styles.texticon}>{strings.recEReponse}</Text>
 <Text style={styles.texticon1}>{reponse}</Text>
 
 </View>

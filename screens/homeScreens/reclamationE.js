@@ -7,6 +7,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Searchbar } from 'react-native-paper';
 import bgImage from '../../images/steg9.jpeg'
 import Modal from 'react-native-modal';
+import {strings} from './localization'
+
 const Home = ({navigation})=>{
       
      const [data,setData] = useState([])
@@ -53,9 +55,9 @@ const Home = ({navigation})=>{
             <View style={styles.cardView}>
 
             <View style={{ flex:1,paddingHorizontal: 8, paddingVertical: 16,flexDirection:"column" }}>
-            <Text style={{ fontSize: 18, color: 'black',paddingBottom:5,height:30}}>Date:</Text>   
-            <Text style={{ fontSize: 18, color: 'black',paddingBottom:5 ,height:70}}>Type de réclamation:</Text>   
-                    <Text style={{ fontSize: 18, color: 'black',paddingBottom:5,height:40 }}>Réponse:</Text>
+            <Text style={{ fontSize: 18, color: 'black',paddingBottom:5,height:30}}>{strings.daterec}</Text>   
+            <Text style={{ fontSize: 18, color: 'black',paddingBottom:5 ,height:70}}>{strings.recETitle}:</Text>   
+                    <Text style={{ fontSize: 18, color: 'black',paddingBottom:5,height:40 }}>{strings.recEReponse}</Text>
                   </View>  
                  <View style={{ flex:1,paddingHorizontal: 8, paddingVertical: 16,flexDirection:"column",width:200,height:150 }}>
 
@@ -101,7 +103,7 @@ const Home = ({navigation})=>{
                     marginTop: 50
                   }}
                 >
-                  <Text style={{ color: 'red' }}>Aucune facture trouvé</Text>
+                  <Text style={{ color: 'red' }}>{strings.recERoFact}</Text>
                 </View>
               )}
               />

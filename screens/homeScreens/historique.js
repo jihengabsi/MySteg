@@ -8,6 +8,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import bgImage from '../../images/background.jpg';
 import Modal from 'react-native-modal';
 import {Card} from 'react-native-paper'
+import {strings} from './localization'
 
 
   
@@ -100,7 +101,7 @@ export default  historique =   ({navigation}) => {
             <Card style={styles.mycard} onPress={()=>navigation.navigate("demandeE")}>
             <View style={styles.cardView}>
             <FontAwesome5 name="wpforms" style={{paddingVertical:10}}  size={80} color="lightblue" />
-            <Text style={styles.police}>Demandes envoyées</Text>
+            <Text style={styles.police}>{strings.histDemanEnv}</Text>
             <Text style={styles.police}>{demC}</Text>
             </View>
 
@@ -108,7 +109,7 @@ export default  historique =   ({navigation}) => {
             <Card style={styles.mycard} onPress={()=>navigation.navigate("reclamationE")}> 
             <View style={styles.cardView}>
             <FontAwesome5 name="exclamation-circle" style={{paddingVertical:10}}  size={70} color="lightblue" />
-            <Text style={styles.police}>Réclamations envoyées</Text>
+            <Text style={styles.police}>{strings.histRecEnv}</Text>
     <Text style={styles.police}>{rec}</Text>
             </View>
 
@@ -116,7 +117,7 @@ export default  historique =   ({navigation}) => {
             <Card style={styles.mycard} onPress={()=>navigation.navigate("fs")}>
             <View style={styles.cardView}>
             <FontAwesome5 name="money-check" style={{paddingVertical:10}}  size={70} color="lightblue" />
-            <Text style={styles.police}>Factures simulées</Text>
+            <Text style={styles.police}>{strings.histFactSim}</Text>
             <Text style={styles.police}>{fs}</Text>
             </View>
 

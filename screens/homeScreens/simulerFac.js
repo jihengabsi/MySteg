@@ -10,6 +10,7 @@ import bgImage from '../../images/background.jpg'
 import CheckBox from '@react-native-community/checkbox';
 import {Picker} from '@react-native-community/picker';
 import AsyncStorage from '@react-native-community/async-storage';
+import { strings } from './localization';
 export default  accueil =({navigation}) => {
 
   const [toggleEcc, setEcc] = useState(false);
@@ -49,32 +50,32 @@ const sendCred=async()=>{
           <Image source={Logo} style={{top:-20}} />
         </View>
         <View style={styles.cardView1} >
-        <Text style={{ fontSize: 18, color: 'black',top:-50 }}>Période de Consommation:</Text> 
+        <Text style={{ fontSize: 18, color: 'black',top:-50 }}>{strings.period_cons}</Text> 
         <Picker
   selectedValue={PC}
   style={{height:40, width:150,left:10,top:-61,backgroundColor: 'rgba(255,255,255,0.5)',}}
   onValueChange={(itemValue, itemIndex) =>
     setPC(itemValue)
   }>
-  <Picker.Item  label="1 mois" value="1" />
-  <Picker.Item label="2 mois" value="2" />
-  <Picker.Item  label="4 mois" value="4" />
-  <Picker.Item label="6 mois" value="6" />
-  <Picker.Item  label="8 mois" value="8" />
-  <Picker.Item label="10 mois" value="10" />
-  <Picker.Item  label="12 mois" value="12" />
+  <Picker.Item  label={strings.moisWehed} value="1" />
+  <Picker.Item label={strings.moisWehed2} value="2" />
+  <Picker.Item  label={strings.moisWehed4} value="4" />
+  <Picker.Item label={strings.moisWehed6} value="6" />
+  <Picker.Item  label={strings.moisWehed8} value="8" />
+  <Picker.Item label={strings.moisWehed10} value="10" />
+  <Picker.Item  label={strings.moisWehed12} value="12" />
   </Picker>
           </View>
           <View style={styles.cardView1} >
-        <Text style={{ fontSize: 18, color: 'black',top:-50,width:217 }}>Usage:</Text> 
+        <Text style={{ fontSize: 18, color: 'black',top:-50,width:217 }}>{strings.usage}</Text> 
         <Picker
   selectedValue={usage}
   style={{height:40, width:150,left:10,top:-61,backgroundColor: 'rgba(255,255,255,0.5)',}}
   onValueChange={(itemValue, itemIndex) =>
     setUsage(itemValue)
   }>
-  <Picker.Item  label="Domestique" value="1" />
-  <Picker.Item label="Non domestique" value="2" />
+  <Picker.Item  label={strings.domestic} value="1" />
+  <Picker.Item label={strings.nndomestic} value="2" />
   </Picker>
           </View>
         <View style={styles.cardView1} >
@@ -84,51 +85,51 @@ const sendCred=async()=>{
     value={toggleEcc}
     onValueChange={() => toggleEcc ? setEcc(false) : setEcc(true)}
   />
-     <Text style={{ fontSize: 18, color: 'black',top:-50 }}>Compteur éclairage</Text> 
+     <Text style={{ fontSize: 18, color: 'black',top:-50 }}>{strings.compteurEclai}</Text> 
   </View>
         <Card style={styles.mycard}>
       <View style={styles.cardView}>
         
-            <Text style={{ fontSize: 18, color: '#1e5565'}}>Puissance/Débit</Text>
+            <Text style={{ fontSize: 18, color: '#1e5565'}}>{strings.puisDebit}</Text>
             <Picker
   selectedValue={puiElec}
   style={{height: 50, width: 200}}
   onValueChange={(itemValue, itemIndex) =>
     setPuiElec(itemValue)
   }>
-  <Picker.Item  label="2 fils - 5 A" value="1" />
-  <Picker.Item label="2 fils - 10 A" value="2" />
-  <Picker.Item label="2 fils - 5 A" value="3" />
-  <Picker.Item label="2 fils - 15 A" value="4" />
-  <Picker.Item label="2 fils - 20 A" value="5" />
-  <Picker.Item label="2 fils - 30 A" value="6" />
-  <Picker.Item label="2 fils - 45 A" value="7" />
-  <Picker.Item label="2 fils - 63 A" value="8" />
-  <Picker.Item label="2 fils - 100 A" value="9" />
-  <Picker.Item label="2 fils - 125 A" value="10" />
-  <Picker.Item label="2 fils - 160 A" value="11" />
-  <Picker.Item label="2 fils - 225 A" value="12" />
-  <Picker.Item label="4 fils - 5 A" value="3" />
-  <Picker.Item label="4 fils - 10 A" value="7" />
-  <Picker.Item label="4 fils - 15 A" value="10" />
-  <Picker.Item label="4 fils - 20 A" value="13" />
-  <Picker.Item label="4 fils - 30 A" value="20" />
-  <Picker.Item label="4 fils - 50 A" value="33" />
-  <Picker.Item label="4 fils - 63 A" value="42" />
-  <Picker.Item label="4 fils - 75 A" value="50" />
-  <Picker.Item label="4 fils - 80 A" value="53" />
-  <Picker.Item label="4 fils - 100 A" value="67" />
-  <Picker.Item label="4 fils - 125 A" value="83" />
-  <Picker.Item label="4 fils - 160 A" value="6" />
-  <Picker.Item label="4 fils - 200 A" value="32" />
-  <Picker.Item label="4 fils - 250 A" value="65" />
-  <Picker.Item label="4 fils - 300 A" value="0" />
+  <Picker.Item  label={strings.fils} value="1" />
+  <Picker.Item label={strings.fils1} value="2" />
+  <Picker.Item label={strings.fils2} value="3" />
+  <Picker.Item label={strings.fils3} value="4" />
+  <Picker.Item label={strings.fils4} value="5" />
+  <Picker.Item label={strings.fils5} value="6" />
+  <Picker.Item label={strings.fils6} value="7" />
+  <Picker.Item label={strings.fils7} value="8" />
+  <Picker.Item label={strings.fils8} value="9" />
+  <Picker.Item label={strings.fils9} value="10" />
+  <Picker.Item label={strings.fils10} value="11" />
+  <Picker.Item label={strings.fils11} value="12" />
+  <Picker.Item label={strings.fils12} value="3" />
+  <Picker.Item label={strings.fils13} value="7" />
+  <Picker.Item label={strings.fils14} value="10" />
+  <Picker.Item label={strings.fils15} value="13" />
+  <Picker.Item label={strings.fils16} value="20" />
+  <Picker.Item label={strings.fils14} value="33" />
+  <Picker.Item label={strings.fils18} value="42" />
+  <Picker.Item label={strings.fils19} value="50" />
+  <Picker.Item label={strings.fils20} value="53" />
+  <Picker.Item label={strings.fils21} value="67" />
+  <Picker.Item label={strings.fils22} value="83" />
+  <Picker.Item label={strings.fils23} value="6" />
+  <Picker.Item label={strings.fils24} value="32" />
+  <Picker.Item label={strings.fils25} value="65" />
+  <Picker.Item label={strings.fils26} value="0" />
 </Picker>
-            <Text style={{ fontSize: 18, color: '#1e5565'}}>Consommation</Text>   
+            <Text style={{ fontSize: 18, color: '#1e5565'}}>{strings.consomation}</Text>   
           
 
 <TextInput
-            placeholder={'Tapez ici votre consommation'}
+            placeholder={strings.placeholderSim}
             style={styles.input1}
             placeholderTextColor={'black'}
             underlineColorAndroid='transparent'
@@ -146,12 +147,12 @@ const sendCred=async()=>{
     value={toggleGaz}
     onValueChange={() => toggleGaz ? setGaz(false) : setGaz(true)}
   />
-     <Text style={{ fontSize: 18, color: 'black' ,top:-50 }}>Compteur gaz</Text> 
+     <Text style={{ fontSize: 18, color: 'black' ,top:-50 }}>{strings.compteurGaz}</Text> 
   </View>
         <Card style={styles.mycard}>
       <View style={styles.cardView}>
         
-            <Text style={{ fontSize: 18, color: '#1e5565'}}>Puissance/Débit</Text>
+            <Text style={{ fontSize: 18, color: '#1e5565'}}>{strings.puisDebit}</Text>
             <Picker
   selectedValue={puiGaz}
   style={{height: 50, width: 200}}
@@ -162,11 +163,11 @@ const sendCred=async()=>{
   <Picker.Item label="10 m3" value="2" />
   
 </Picker>
-            <Text style={{ fontSize: 18, color: '#1e5565'}}>Consommation</Text>   
+            <Text style={{ fontSize: 18, color: '#1e5565'}}>{strings.consomation}</Text>   
           
 
 <TextInput
-            placeholder={'Tapez ici votre consommation'}
+            placeholder={strings.placeholderSim}
             style={styles.input1}
             placeholderTextColor={'black'}
             underlineColorAndroid='transparent'
@@ -179,7 +180,7 @@ const sendCred=async()=>{
      
      <View style={{ marginLeft:130,width:200, marginTop: -80 }}>
             <TouchableOpacity style={styles.login} onPress={sendCred}>
-              <Text style={styles.textlog}>Simuler</Text>
+              <Text style={styles.textlog}>{strings.btSimuler}</Text>
             </TouchableOpacity>
           </View>
       </View>

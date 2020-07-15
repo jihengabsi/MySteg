@@ -1,5 +1,6 @@
 import React, {useEffect,useState} from 'react';
 import * as ImagePicker from 'react-native-image-picker';
+import {strings} from './localization'
 
 import {Button} from 'react-native-paper';
 import {StyleSheet,TouchableOpacity,Image,
@@ -27,7 +28,7 @@ import steg from '../../images/stegLogo.png'
 
 
 <View style={styles.infoContainer}>
-<Text style={{fontWeight:"300",fontSize:30,color:"#365f91"}}>Demande</Text>
+<Text style={{fontWeight:"300",fontSize:30,color:"#365f91"}}>{strings.demande}</Text>
 </View>
 
 </View>
@@ -37,24 +38,24 @@ import steg from '../../images/stegLogo.png'
 <View style={styles.cub2}>
 <View style={{marginTop:0}}>
 <View style={styles.info}>
-<Text style={styles.texticon}>Date:</Text>
+<Text style={styles.texticon}>{strings.daterec}</Text>
 <Text style={styles.texticon1}>{date}</Text>
 </View>
 
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Type de la demande:</Text>
+<Text style={styles.texticon}>{strings.demandeType}</Text>
 <Text style={styles.texticon1}>{typeDemand}</Text>
 </View>
 
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Message de la demande:</Text>
+<Text style={styles.texticon}>{strings.dsMEssageDem}</Text>
 <Text style={styles.texticon1}>{messageDemand}</Text>
 </View>
 
 <View style={styles.info}>
-<Text style={styles.texticon}>Réponse:</Text>
+<Text style={styles.texticon}>{strings.recEReponse}</Text>
 <Text style={styles.texticon1}>{reponse}</Text>
 
 </View>

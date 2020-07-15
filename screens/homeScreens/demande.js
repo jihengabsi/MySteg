@@ -9,6 +9,8 @@ import {Picker} from '@react-native-community/picker';
 //import {strings} from './localization'
 import { ScrollView } from 'react-native-gesture-handler';
 import moment from 'moment';
+import {strings} from './localization'
+
 import AsyncStorage from '@react-native-community/async-storage';
 const sendMessage = ({navigation})=>{
 
@@ -60,7 +62,7 @@ navigation.replace("accueil")
           <ScrollView>
           <KeyboardAvoidingView>
           <View style={styles.partie2}>
-<Text style={{color:'#136FAF',fontWeight:'bold',fontSize:15,marginStart:20}}>Type de la demande:</Text>
+<Text style={{color:'#136FAF',fontWeight:'bold',fontSize:15,marginStart:20}}>{strings.demandeType}</Text>
 </View>
 
 
@@ -77,8 +79,8 @@ navigation.replace("accueil")
             }}
   
         >
-          <Picker.Item  label= 'Nouveau Branchement' value= 'Nouveau Branchement' />
-          <Picker.Item  label= 'Remplacer ou Deplacer Compteur' value= 'Remplacer ou Deplacer Compteur' />
+          <Picker.Item  label={strings.demandLabel1} value= 'Nouveau Branchement' />
+          <Picker.Item  label={strings.demandLabel2}  value= 'Remplacer ou Deplacer Compteur' />
     
         </Picker>
 
@@ -161,7 +163,7 @@ onChangeText={text=>setMessageBranch(text)}
 containerStyle={styles.textareaContainer}
 style={styles.textarea}
 maxLength={300}
-placeholder={'Rédigez Votre Demande ici'}
+placeholder={strings.demandePlaceholder}
 placeholderTextColor={'#136FAF'}
 underlineColorAndroid={'transparent'}
 
@@ -174,7 +176,7 @@ underlineColorAndroid={'transparent'}
       <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
         <TouchableOpacity style={styles.login}
          onPress={()=>saveRec()}>
-          <Text style={styles.textlog}>Envoyer</Text>
+          <Text style={styles.textlog}>{strings.bt_env}</Text>
         </TouchableOpacity>
       </View>
      

@@ -7,6 +7,8 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Searchbar } from 'react-native-paper';
 import bgImage from '../../images/steg9.jpeg'
 import Modal from 'react-native-modal';
+import {strings} from './localization'
+
 const Home = ({navigation})=>{
       
      const [data,setData] = useState([])
@@ -53,10 +55,10 @@ const Home = ({navigation})=>{
             <View style={styles.cardView}>
 
                 <View style={{ flex:1,paddingHorizontal: 8, paddingVertical: 16,flexDirection:"column", }}>
-            <Text style={{ fontSize: 18, color: 'black' }}>Date:</Text>   
-            <Text style={{ fontSize: 18, color: 'black' }}>Consommation elec:</Text>   
-                    <Text style={{ fontSize: 18, color: 'black' }}>Consommation gaz:</Text>
-                    <Text style={{ fontSize: 18, color: 'black' }}>Montant:</Text>
+            <Text style={{ fontSize: 18, color: 'black' }}>{strings.daterec}</Text>   
+            <Text style={{ fontSize: 18, color: 'black' }}>{strings.simdacConselect}</Text>   
+                    <Text style={{ fontSize: 18, color: 'black' }}>{strings.simdacCongaz}</Text>
+                    <Text style={{ fontSize: 18, color: 'black' }}>{strings.factueSMontant}</Text>
                   </View>  
                  <View style={{ paddingHorizontal: 8, paddingVertical: 16,flexDirection:"column",  }}>
 
@@ -102,7 +104,7 @@ const Home = ({navigation})=>{
                     marginTop: 50
                   }}
                 >
-                  <Text style={{ color: 'red' }}>Aucune facture trouvé</Text>
+                  <Text style={{ color: 'red' }}>{strings.recERoFact}</Text>
                 </View>
               )}
               />

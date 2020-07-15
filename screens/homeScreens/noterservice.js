@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import StarRating from 'react-native-star-rating';
 import { View,TouchableOpacity,Text ,StyleSheet,Alert,ImageBackground} from 'react-native';
 import bgImage from '../../images/steg9.jpeg'
+import {strings} from './localization'
  
 const CustomStarExample =({navigation})=> {
  
@@ -58,7 +59,7 @@ activeOpacity={0.5}
 style={styles.login}
 onPress={()=>savenote()}
 >
-<Text style={styles.textlog}>Envoyer</Text>
+<Text style={styles.textlog}>{strings.bt_env}</Text>
 </TouchableOpacity>
       </View>
       </ImageBackground>

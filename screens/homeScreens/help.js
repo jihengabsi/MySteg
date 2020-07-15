@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, Linking, Platform, TouchableOpacity,ImageBackground } from 'react-native';
 import bgImage from '../../images/steg9.jpeg'
+import {strings} from './localization'
 
 
 export default class App extends Component {
@@ -37,12 +38,12 @@ export default class App extends Component {
 <ImageBackground source={bgImage} style={styles.container1}>
       <View style={styles.container} >
         <TouchableOpacity onPress={this.makeCall} activeOpacity={0.7} style={styles.touchableButton} >
-          <Text style={styles.TextStyle}> Numero de Service</Text>
+          <Text style={styles.TextStyle}>{strings.helpf1n}</Text>
         </TouchableOpacity>
         <Text>{`\n`}</Text>
 
         <TouchableOpacity onPress={this.GreenCall} activeOpacity={0.7} style={styles.touchableButton1} >
-          <Text style={styles.TextStyle}> Numero Vert</Text>
+          <Text style={styles.TextStyle}>{strings.helpf2n}</Text>
         </TouchableOpacity>
       </View>
       </ImageBackground>

@@ -6,6 +6,8 @@ import {
 import bgImage from '../../images/background.jpg'
 import Logo from '../../images/stegLogo.png'
 import AsyncStorage from '@react-native-community/async-storage';
+import {strings} from './localization'
+
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export default ajoutRef = ({navigation}) => {
     
@@ -58,7 +60,7 @@ export default ajoutRef = ({navigation}) => {
             <TextInput
               style={styles.input}
               onBlur={() => reffValidator()}
-              placeholder={'Tapez ici Référence'}
+              placeholder={strings.refPlacholder}
               placeholderTextColor={'rgba(47,163,218,0.5)'}
               underlineColorAndroid='transparent'
               keyboardType="numeric"
@@ -77,7 +79,7 @@ export default ajoutRef = ({navigation}) => {
 
             <TextInput
               style={styles.input1}
-              placeholder={'Tapez ici Le code dessus'}
+              placeholder={strings.refPlacholder1}
               placeholderTextColor={'rgba(47,163,218,0.7)'}
               underlineColorAndroid='transparent'
               onChangeText={(data) => setTextInputHolder(data)}
@@ -87,7 +89,7 @@ export default ajoutRef = ({navigation}) => {
 
           <View style={{ alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
             <TouchableOpacity style={styles.login} onPress={sendCred}>
-              <Text style={styles.textlog}>Ajouter</Text>
+              <Text style={styles.textlog}>{strings.refbtn_add}</Text>
             </TouchableOpacity>
           </View>
           </KeyboardAvoidingView> 
