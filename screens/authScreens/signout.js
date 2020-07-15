@@ -12,9 +12,11 @@ import {
    import AsyncStorage from '@react-native-community/async-storage';
    import { GoogleSignin,GoogleSigninButton, statusCodes } from '@react-native-community/google-signin';
    export default class Profil extends Component{
-    constructor(props) {
+    
+    constructor({props,route}) {
       super(props);
       this.state = {
+        pic:route.params.picture,
         userInfo: null,
         gettingLoginStatus: true,
       };
@@ -43,6 +45,7 @@ import {
         console.log(result);
       });
       alert('Au revoir');
+      await AsyncStorage.setItem('connected',"null")
       this.props.navigation.navigate('signin');
     }
     this.setState({ gettingLoginStatus: false });
@@ -97,8 +100,9 @@ import {
       AsyncStorage.removeItem('token', (err, result) => {
         console.log(result);
       });
-      this.setState({ userInfo: null }); // Remove the user from your app's state as well
-      alert('Au revoir');
+      this.setState({ userInfo: null });
+      await AsyncStorage.setItem('connected',"null") // Remove the user from your app's state as well
+      Alert.alert('Au revoir');
       this.props.navigation.navigate('signin');
     } catch (error) {
       console.error(error);
@@ -123,13 +127,13 @@ import {
               style={styles.imageStyle}
             />
             <Text style={styles.text}>
-              Name: {this.state.userInfo.user.name}{' '}
+              Nom et prénom: {this.state.userInfo.user.name}{' '}
             </Text>
             <Text style={styles.text}>
               Email: {this.state.userInfo.user.email}
             </Text>
             <TouchableOpacity style={styles.button} onPress={this._signOut}>
-              <Text>Logout</Text>
+              <Text>Déconnexion</Text>
             </TouchableOpacity>
           </View>
         );
@@ -137,12 +141,12 @@ import {
         //For login showing the Signin button
         return (
           <View style={styles.container}>
-            <GoogleSigninButton
-              style={{ width: 312, height: 48 }}
-              size={GoogleSigninButton.Size.Wide}
-              color={GoogleSigninButton.Color.Light}
-              onPress={this._signIn}
-            />
+              <Text style={styles.text}>
+             Vous étes sure?
+            </Text>
+            <TouchableOpacity style={styles.button} onPress={this._signOut}>
+              <Text>Déconnexion</Text>
+            </TouchableOpacity>
           </View>
         );
       }
@@ -158,6 +162,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imageStyle: {
+    borderRadius: 200,
     width: 200,
     height: 300,
     resizeMode: 'contain',

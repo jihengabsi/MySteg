@@ -33,6 +33,7 @@ const LoadingScreen = ({navigation,route}) => {
       .then(async (data)=>{
         try {
           await AsyncStorage.setItem('token',data.token)
+          await AsyncStorage.setItem('connected',"yes")
           navigation.replace("accueil")
         } catch (error) {
           Alert.alert(error)
@@ -67,6 +68,7 @@ const LoadingScreen = ({navigation,route}) => {
           try {
             console.log(data)
             await AsyncStorage.setItem('token',data.token)
+            await AsyncStorage.setItem('connected',"yes")
             navigation.replace("accueil")
           } catch (error) {
             detectLogin1()

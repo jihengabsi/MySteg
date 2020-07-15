@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
         flex:1,
         position:"absolute",
         bottom:300,
-        left:45,
+        left:30,
         width:300,
         height:206,
         borderRadius: 10,

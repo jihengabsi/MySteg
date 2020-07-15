@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import React, {useEffect,useState}from 'react';
-import { StyleSheet,Dimensions, KeyboardAvoidingView,Text, View ,ImageBackground,Image,
+import { StyleSheet,Dimensions, KeyboardAvoidingView,Text, View ,ImageBackground,
    TextInput,Alert,
   TouchableOpacity,ScrollView} 
    from 'react-native';

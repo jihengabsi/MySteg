@@ -4,20 +4,31 @@ import React, {Component} from 'react';
 import {View,Text,StyleSheet,Image,Animated,ImageBackground,Dimensions,TouchableOpacity} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import logo from '../images/stegLogo.png';
-
+import AsyncStorage from '@react-native-community/async-storage';
 const { width: WIDTH } = Dimensions.get("window");
 class Splash extends Component{
+
 state={
+    conn:"null",
     LogoAnime: new Animated.Value(0),
     LogoText: new Animated.Value(0),
     LoadingSpinner: false,
 };
 
-componentDidMount(){
+componentDidMount = async()=>{
     const {LogoAnime, LogoText} = this.state;
     const {navigate} = this.props.navigation;
+    this.setState({
+        conn:await AsyncStorage.getItem('connected'),
+            });
 setTimeout(() => {
-   navigate('signin'); 
+    if(this.state.conn=="null"){
+        navigate('signin');
+    }
+    else{
+        navigate('accueil'); 
+    }
+   
 }, 2000);
     Animated.parallel([
         Animated.spring(LogoAnime, {

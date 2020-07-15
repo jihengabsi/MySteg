@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import {Provider,useSelector} from 'react-redux'
-import  React  from 'react';
+import React,{useEffect} from 'react';
 import { StyleSheet,Image, View, TabBarIOS} from 'react-native';
 import {NavigationContainer } from '@react-navigation/native';
 
@@ -54,23 +54,24 @@ import steg from './images/steg.jpg'
 const AuthStack= createStackNavigator();
 
 export default function App() {
-
+ 
   return (
     <NavigationContainer > 
  <AuthStack.Navigator>
-          <AuthStack.Screen
+ <AuthStack.Screen
     name="Splash"
     component={splash}
     options={{ headerShown:false,
     }}
    
-  />
+  /> 
   <AuthStack.Screen
     name="signin"
     component={signin}
     options={{ title: "Signin" }}
     options={{ headerShown:false}}
   />
+     
    <AuthStack.Screen
     name="reclamation"
     component={reclamation}
@@ -230,7 +231,13 @@ export default function App() {
     name="signout"
     component={signout}
     options={{ title: "Signout" }}
-    options={{ headerShown:false,
+    options={{ headerShown:true,title: "Déconnexion",  headerStyle: {
+      backgroundColor: '#5DADE2',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
      }}
   />
   <AuthStack.Screen

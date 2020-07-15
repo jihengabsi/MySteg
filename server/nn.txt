@@ -20,15 +20,19 @@ import AsyncStorage from '@react-native-community/async-storage';
 import { Form } from 'react-native-form-auto-next';
 
 
-
+import Modal from 'react-native-modal';
 const LoginScreen = (props) => {
+  const [isModalVisible, setModalVisible] = useState(false);
   const [EmailError,setEmailError] = useState('')
   const [passError,setpassError] = useState('')
   const [email,setEmail] = useState('');
   const [password,setPassword]=useState('');
   const [showPass1,setShowPass]= useState(true);
   const [press,setPress]= useState(false);  
-
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+ 
   const showPass = () => {
     if(press == false){
       setShowPass(false)
@@ -107,7 +111,6 @@ const EmailValidation=()=>{
                await AsyncStorage.setItem('token',data.token)
                await AsyncStorage.setItem('ref',"null")
                await AsyncStorage.setItem('email',email)
-               await AsyncStorage.setItem('connected',yes)
                Alert.alert(`Bienvenu`)
                props.navigation.replace("loading1")
         }catch (e) {
@@ -208,6 +211,14 @@ onPress ={() => showPass()}>
 </View>
    </ImageBackground>
    </KeyboardAvoidingView>
+   <Modal isVisible={isModalVisible}>
+         <View style={styles.modalView}>
+  <Text style={{top:20,fontSize: 18, color: 'black',alignSelf:"center"}} >Bienvenu {username}!</Text>
+  <Image source={happy} style={{width:40,height:40,top:40,alignSelf:"center"}}/>
+                 
+         
+                   </View>
+                 </Modal>
    </View>
    </ScrollView>
  )}
@@ -287,6 +298,23 @@ fontSize: 20
    alignItems:'center',
 
    
- }
+ },
+ modalView:{
+  flex:1,
+  position:"absolute",
+  bottom:300,
+  left:45,
+  width:300,
+  height:180,
+  borderRadius: 10,
+  backgroundColor:"white"
+
+},
+modalButtonView:{
+
+justifyContent:"space-around",
+
+
+},
 })
 export default LoginScreen;

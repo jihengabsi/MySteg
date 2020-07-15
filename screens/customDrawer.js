@@ -58,19 +58,24 @@ import MyTabs from './customButtomTab';
  <Text style={styles.name}>{name}</Text>
        </View>
        <ScrollView>
-                    <Text style={{marginVertical: 10,marginHorizontal:15,color:'grey'}}>Facturation:</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:15,color:'gray'}}>Facturation:</Text>
                     <View style={{ flexDirection: 'row',alignItems: "center"}}>
                     <FontAwesome5 style={{marginVertical: 10,marginHorizontal:15}} name={'money-bill'} size={20} color="lightblue" />
-                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'grey'}} onPress={() => props.navigation.navigate('affichFac')} >Factures</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('affichFac')} >Factures</Text>
                     </View>
                     <View style={{ flexDirection: 'row',alignItems: "center"}}>
                     <FontAwesome5 style={{marginVertical: 10,marginHorizontal:20}} name={'calculator'} size={20} color="lightblue" />
-                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'grey'}} onPress={() => props.navigation.navigate('simulerFac')} >Simulation</Text>
+                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('simulerFac')} >Simulation</Text>
                     </View>
                 </ScrollView>
                 <View style={{ borderBottomColor: 'lightgrey',borderBottomWidth: 1}}/>
  <DrawerItemList {...props} />
-
+ <View style={{ borderBottomColor: 'lightgrey',top:100,borderBottomWidth: 1}}/>
+ <View style={{ flexDirection: 'row',alignItems: "center"}}>
+                    <FontAwesome5 style={{marginVertical: 120,marginHorizontal:20}} name={'sign-out-alt'} size={20} color="lightblue" />
+                    
+                    <Text style={{marginVertical: 10,marginHorizontal:10,color:'gray'}} onPress={() => props.navigation.navigate('signout',{picture})} >Déconnexion</Text>
+                    </View>
     
    </DrawerContentScrollView>
     
@@ -115,8 +120,8 @@ import MyTabs from './customButtomTab';
     />
     <Drawer.Screen name="site" component={site} 
     options={{
-       drawerLabel: 'Site',
-      drawerIcon:() => (   <FontAwesome5 name={"map-marked-alt"} size={20} color="lightblue" /> ),
+       drawerLabel: 'Site offciel STEG',
+      drawerIcon:() => (   <FontAwesome5 name={"external-link-square-alt"} size={20} color="lightblue" /> ),
   }}
     />
      <Drawer.Screen name="help" component={help} 
@@ -125,16 +130,13 @@ import MyTabs from './customButtomTab';
       drawerIcon:() => (   <FontAwesome5 name={"question-circle"} solid size={20} color="lightblue" /> ),
   }}
     />
-  <Drawer.Screen name="accueil" component={accueil1} 
+  <Drawer.Screen name="accueil"  component={accueil1} 
     options={{
        drawerLabel: 'Accueil',
       drawerIcon:() => (   <FontAwesome5 name={"home"} size={20} color="lightblue" /> ),
   }}
     />
-    <Drawer.Screen name="Deconnexion" component={signout}  options={{
-  
-      drawerIcon:() => (   <FontAwesome5 name={"sign-out-alt"} size={20} color="lightblue" /> ),
-  }} />
+ 
     
   </Drawer.Navigator>
  );
@@ -145,28 +147,24 @@ import MyTabs from './customButtomTab';
 const styles = StyleSheet.create({
 
     logo: {
-      
-      
-      top:20,
-      width: 120,
-      height: 120,
+
+      top:10,
+      width: 80,
+      height: 80,
       borderRadius: 200,
       borderColor:'white',
-      borderWidth:4,
-      alignSelf:"center",
+      left:70
      
     },
     name: {
       flex:1,
       position:"relative",
-      alignContent:"center",
       color: '#fff',
-      height: 40,
       width: 150,
-      alignSelf:"center",
-      top:25,
-      fontSize: 25,
-      borderRadius: 200
+      left:160,
+      top:-50,
+      fontSize: 18,
+
      
     },
     avatar:{
@@ -174,7 +172,7 @@ const styles = StyleSheet.create({
       right:50,
       top:-4,
       backgroundColor: '#ADD8E6',
-      height: 200,
+      height: 110,
       width:300
     }
   });
