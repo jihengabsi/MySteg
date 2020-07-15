@@ -98,7 +98,7 @@ useEffect(()=>{
                   backgroundColor: 'rgba(255,255,255,0.4)'}
                 }
                 />
-                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>{strings.votre_ref}</Text>
+                  <Text style={{ fontSize: 15.5, color: '#ffffff', fontWeight: 'bold' }}>{strings.votre_profil}</Text>
                 </TouchableOpacity>
               </View>
             </View>

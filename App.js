@@ -46,7 +46,7 @@ import noterService from './screens/homeScreens/noterservice'
 import MyTabs from './screens/customButtomTab';
 
 import parametre from './screens/homeScreens/parametre'
-
+import { strings } from './screens/homeScreens/localization'
 
 import maps from './screens/map';
 import site from './screens/site';
@@ -87,13 +87,19 @@ export default function App() {
   <AuthStack.Screen
     name="parametre"
     component={parametre}
- 
+    options={{ headerShown:true,title:"changer les langues",  headerStyle: {
+      backgroundColor: '#5DADE2',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },}}
   />
   
    <AuthStack.Screen
     name="reclamationE"
     component={reclamationE}
-    options={{ headerShown:true,title: "Réclamations envoyées",  headerStyle: {
+    options={{ headerShown:true,title:strings.fsFactSim,  headerStyle: {
       backgroundColor: '#5DADE2',
     },
     headerTintColor: '#fff',
@@ -104,7 +110,7 @@ export default function App() {
   <AuthStack.Screen
     name="maps"
     component={maps}
-    options={{ headerShown:true,title: "Map",  headerStyle: {
+    options={{ headerShown:true,title:strings.custMap,  headerStyle: {
       backgroundColor: '#5DADE2',
     },
     headerTintColor: '#fff',
@@ -115,7 +121,7 @@ export default function App() {
    <AuthStack.Screen
     name="site"
     component={site}
-    options={{ headerShown:true,title: "Site",  headerStyle: {
+    options={{ headerShown:true,title:strings.custSite,  headerStyle: {
       backgroundColor: '#5DADE2',
     },
     headerTintColor: '#fff',
@@ -126,7 +132,7 @@ export default function App() {
   <AuthStack.Screen
     name="rec"
     component={rec}
-    options={{ headerShown:true,title: "Votre réclamation",  headerStyle: {
+    options={{ headerShown:true,title:strings.rec,  headerStyle: {
       backgroundColor: '#5DADE2',
     },
     headerTintColor: '#fff',

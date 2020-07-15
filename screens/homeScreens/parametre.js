@@ -49,7 +49,7 @@ export default  accueil =   ({navigation}) => {
     return (
         <ImageBackground source={bgImage} style={styles.container1}>
         <View style={styles.backContainer}>
-        <Text style={{color:'white',alignSelf:'center',top:100,fontSize:20,fontStyle:"italic",fontWeight:"bold"}}>Choisissez la langue de votre application:</Text>
+    <Text style={{color:'white',alignSelf:'center',top:100,fontSize:20,fontStyle:"italic",fontWeight:"bold"}}>{strings.parlng}</Text>
   <View style={{alignItems:'center',top:120}}>
  
 <Card style={{width:200,marginHorizontal:20,height:250,alignSelf:'center',backgroundColor:'rgba(255,255,255,0.5)'}}>

@@ -108,31 +108,31 @@ import MyTabs from './customButtomTab';
    
      <Drawer.Screen name="noterService" component={noterService} 
     options={{
-       drawerLabel: 'Noter les services',
+       drawerLabel: strings.custNote,
       drawerIcon:() => (   <FontAwesome5 name={"grin-stars"} solid size={20} color="lightblue" /> ),
   }}
     />
      <Drawer.Screen name="map" component={map} 
     options={{
-       drawerLabel: 'Map',
+       drawerLabel:strings.custMap,
       drawerIcon:() => (   <FontAwesome5 name={"map-marked-alt"} size={20} color="lightblue" /> ),
   }}
     />
     <Drawer.Screen name="site" component={site} 
     options={{
-       drawerLabel: 'Site offciel STEG',
+       drawerLabel: strings.custSite,
       drawerIcon:() => (   <FontAwesome5 name={"external-link-square-alt"} size={20} color="lightblue" /> ),
   }}
     />
      <Drawer.Screen name="help" component={help} 
     options={{
-       drawerLabel: 'Aide',
+       drawerLabel: strings.custHelp,
       drawerIcon:() => (   <FontAwesome5 name={"question-circle"} solid size={20} color="lightblue" /> ),
   }}
     />
   <Drawer.Screen name="accueil"  component={accueil1} 
     options={{
-       drawerLabel: 'Accueil',
+       drawerLabel: strings.custAcc,
       drawerIcon:() => (   <FontAwesome5 name={"home"} size={20} color="lightblue" /> ),
   }}
     />
