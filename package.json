@@ -28,7 +28,7 @@
     "mailgun-js": "^0.22.0",
     "moment": "^2.27.0",
     "react": "16.11.0",
-    "react-native": "0.62.2",
+    "react-native": "0.62.3",
     "react-native-camera": "^3.26.0",
     "react-native-cards": "^1.1.4",
     "react-native-cards-custom": "^1.1.9",
